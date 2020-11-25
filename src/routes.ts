@@ -1,9 +1,9 @@
 import express from 'express';
 
+import UserController from '@controllers/UserController';
+
 const routes = express.Router();
 
-routes.get('/', async (req, res) => {
-  
-});
+routes.post('/users', UserController.store);
 
 export default routes;
