@@ -3,6 +3,7 @@ import { Request, Response } from 'express';
 import CreateUserService from '../services/CreateUserService';
 import ListUsersService from '../services/ListUsersService';
 import ShowUserService from '../services/ShowUserService';
+import DeleteUserService from '../services/DeleteUserService';
 
 class UserController {
   public async index (request: Request, response: Response): Promise<Response> {
@@ -53,6 +54,20 @@ class UserController {
       delete user.password_hash;
 
       return response.status(200).json(user);
+    } catch (error) {
+      return response.status(400).json({ error: error.message });
+    }
+  }
+
+  public async delete (request: Request, response: Response): Promise<Response> {
+    try {
+      const { id } = request.params;
+      
+      const deleteUser = new DeleteUserService();
+
+      await deleteUser.execute({ id });
+
+      return response.status(200).json({ message: 'User successfully deleted.'});
     } catch (error) {
       return response.status(400).json({ error: error.message });
     }
