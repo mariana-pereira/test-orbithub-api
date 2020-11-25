@@ -10,7 +10,9 @@
     "dev": "ts-node-dev -r tsconfig-paths/register --respawn --transpile-only --no-notify src/server.ts"
   },
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "pg": "^8.5.1",
+    "typeorm": "^0.2.29"
   },
   "devDependencies": {
     "@babel/cli": "^7.12.8",
