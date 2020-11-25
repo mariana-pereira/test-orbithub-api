@@ -3,6 +3,7 @@ import { Request, Response } from 'express';
 import CreateUserService from '../services/CreateUserService';
 import ListUsersService from '../services/ListUsersService';
 import ShowUserService from '../services/ShowUserService';
+import UpdateUserService from '../services/UpdateUser';
 import DeleteUserService from '../services/DeleteUserService';
 
 class UserController {
@@ -50,6 +51,29 @@ class UserController {
       const showUser = new ShowUserService();
 
       const user = await showUser.execute({ id });
+
+      delete user.password_hash;
+
+      return response.status(200).json(user);
+    } catch (error) {
+      return response.status(400).json({ error: error.message });
+    }
+  }
+
+  public async update (request: Request, response: Response): Promise<Response> {
+    try {
+      const { id } = request.params;
+      const { username, email, oldPassword, newPassword } = request.body;
+      
+      const updateUser = new UpdateUserService();
+
+      const user = await updateUser.execute({ 
+        id, 
+        username, 
+        email, 
+        oldPassword, 
+        newPassword 
+      });
 
       delete user.password_hash;
 
