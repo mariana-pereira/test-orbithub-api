@@ -4,5 +4,14 @@ module.exports = {
   "port": 5432,
   "username": "postgres",
   "password": "docker",
-  "database": "testorbithub"
+  "database": "testorbithub",
+  "entities": [
+    "./src/models/*.ts"
+  ],
+  "migrations": [
+    "./src/database/migrations/*.ts"
+  ],
+  "cli": {
+    "migrationsDir": "./src/database/migrations"
+  }
 }
