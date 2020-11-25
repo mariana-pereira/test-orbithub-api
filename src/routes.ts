@@ -1,8 +1,11 @@
 import express from 'express';
 
 import UserController from '@controllers/UserController';
+import SessionController from '@controllers/SessionController';
 
 const routes = express.Router();
+
+routes.post('/session', SessionController.store);
 
 routes.get('/users', UserController.index);
 routes.post('/users', UserController.store);
