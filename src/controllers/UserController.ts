@@ -2,11 +2,11 @@ import { Request, Response } from 'express';
 
 import CreateUserService from '../services/CreateUserService';
 import ListUsersService from '../services/ListUsersService';
+import ShowUserService from '../services/ShowUserService';
 
 class UserController {
   public async index (request: Request, response: Response): Promise<Response> {
     try {
-
       const listUsers = new ListUsersService();
 
       const users = await listUsers.execute();
@@ -33,6 +33,22 @@ class UserController {
         email,
         password_hash,
       });
+
+      delete user.password_hash;
+
+      return response.status(200).json(user);
+    } catch (error) {
+      return response.status(400).json({ error: error.message });
+    }
+  }
+
+  public async show (request: Request, response: Response): Promise<Response> {
+    try {
+      const { id } = request.params;
+      
+      const showUser = new ShowUserService();
+
+      const user = await showUser.execute({ id });
 
       delete user.password_hash;
 
