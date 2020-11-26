@@ -19,6 +19,7 @@
     "jsonwebtoken": "^8.5.1",
     "pg": "^8.5.1",
     "reflect-metadata": "^0.1.13",
+    "ts-node": "^9.0.0",
     "typeorm": "^0.2.29"
   },
   "devDependencies": {
