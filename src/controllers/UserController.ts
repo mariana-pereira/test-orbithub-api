@@ -3,7 +3,7 @@ import { Request, Response } from 'express';
 import CreateUserService from '../services/CreateUserService';
 import ListUsersService from '../services/ListUsersService';
 import ShowUserService from '../services/ShowUserService';
-import UpdateUserService from '../services/UpdateUser';
+import UpdateUserService from '../services/UpdateUserService';
 import DeleteUserService from '../services/DeleteUserService';
 
 class UserController {

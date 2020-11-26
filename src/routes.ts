@@ -2,6 +2,7 @@ import express from 'express';
 
 import UserController from '@controllers/UserController';
 import SessionController from '@controllers/SessionController';
+import BeerController from '@controllers/BeerController';
 
 import authMiddleware from './middlewares/authMiddleware';
 
@@ -16,5 +17,7 @@ routes.get('/users', UserController.index);
 routes.get('/users/:id', UserController.show);
 routes.put('/users/:id', UserController.update);
 routes.delete('/users/:id', UserController.delete);
+
+routes.get('/beers/:id', BeerController.show);
 
 export default routes;
