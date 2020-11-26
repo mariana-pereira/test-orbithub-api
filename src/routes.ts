@@ -18,6 +18,7 @@ routes.get('/users/:id', UserController.show);
 routes.put('/users/:id', UserController.update);
 routes.delete('/users/:id', UserController.delete);
 
+routes.get('/beers', BeerController.index);
 routes.get('/beers/:id', BeerController.show);
 
 export default routes;

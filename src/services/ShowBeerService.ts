@@ -23,7 +23,6 @@ class ShowBeerService {
       throw new Error('Beer not found.');
     }
 
-    console.log(beer);
     return beer;
   }
 }
