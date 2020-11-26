@@ -26,8 +26,11 @@ Run `yarn` to install dependencies.<br />
 
 # Getting Started
 
+Change .env.example to .env and set your database credentials.
+
 Run `yarn dev` in order to start the application in a development environment.
 
 or
 
 Run `yarn build` and then `yarn start` in order to start the application in a production environment.
+
