@@ -1,11 +1,5 @@
 # Test Orbit Hub API
 
-
-[![Languages](https://img.shields.io/github/languages/count/mariana-pereira/test-orbithub-api?color=000000&style=flat)](#)
-[![Stars](https://img.shields.io/github/stars/mariana-pereira/test-orbithub-api?color=000000&style=flat)](https://github.com/mariana-pereira/test-orbithub-api/stargazers)
-[![Forks](https://img.shields.io/github/forks/mariana-pereira/test-orbithub-api?color=000000&style=flat)](https://github.com/mariana-pereira/test-orbithub-api/network/members)
-[![Contributors](https://img.shields.io/github/contributors/mariana-pereira/test-orbithub-api?color=000000&style=flat)](https://github.com/mariana-pereira/test-orbithub-api/graphs/contributors)
-
 > Code developed for the Orbit Hub Fullstack Developer test.
 
 
